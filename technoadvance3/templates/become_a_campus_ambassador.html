@@ -1,0 +1,148 @@
+{% extends "header3.html"%} 
+{% load tags %}
+{% load staticfiles %}
+{% block content %}
+
+   <style>
+      body{
+        font-family: 'Cardo', serif!important;
+      }
+      .content1 {
+        background: linear-gradient(130deg, #07d9a3, #048fee);
+        background-size: 400% 400%;
+        -webkit-animation: gradient 16s ease infinite;
+        animation: gradient 16s ease infinite;
+        margin: auto;
+        padding: 50px;
+        width: 100%;
+        max-width: 100%;
+        min-width: 300px;
+        margin-bottom: 10px;
+        border-radius: 5px;
+        box-shadow:0px 11px 18.33px 3.67px rgba(0, 0, 0, 0.10);
+        color:#fff;
+}
+.content1 p, h3, h5, ul{
+  color:#fff;
+}
+
+    </style>
+
+<section class="banner full" style="padding: 0;min-height: 0vh;height: 60vh !important;">
+        <article>
+          <img src=" {% static 'img/be_a_campus_ambassador.jpg' %}" alt="" style="height:50%!important" />
+          <div class="inner">
+            <header class = "wow fadeInUp">
+              <h3 style="font-size:61px !important;font-family: 'Josefin Sans', sans-serif;" > <strong>Campus Ambassador</strong> </h3>
+              <p>Be a leader and represent us in your campus events.</p>
+              <a href="{% url 'techno:about'  %}">
+              </a>
+            </header>
+          </div>
+        </article> 
+      </section>
+
+  
+<div  id="">
+ <div class="container"  id="about" style = "">
+    <div class = "row">
+      <div class = "col-lg-6 content1">
+        <div class= "container">
+        <div class="col-lg-12 content wow fadeInRight text-justify text-dark">
+            <h3 style="color:#fff !important; font-weight: 400;">Diginique provides you the best opportunity to showcase your talent and polish your interpersonal as well as soft skills. </h3>
+            <h3> </h3>
+            <p>
+              Having the motive to bring student leaders out of the box, making face and voice of an organization, providing learning opportunities, we help you develop various skills such as social media marketing, content marketing, organizing seminars, conducting workshops, vocational training etc.
+            </p>
+            <h5><strong>Oppurtunities</strong></h5>
+            <ul>
+              <li><i class="ion-android-checkmark-circle"></i>Enhance your skill</li>
+              <li><i class="ion-android-checkmark-circle"></i>Represent your college </li>
+              <li><i class="ion-android-checkmark-circle"></i>Improve your communication and managerial skills</li>
+            </ul>
+            <h5><strong>Responsibility</strong></h5>
+            <ul>
+              <li><i class="ion-android-checkmark-circle"></i>Organize Workshop </li>
+              <li><i class="ion-android-checkmark-circle"></i>Publicity</li>
+              <li><i class="ion-android-checkmark-circle"></i>Promotions</li>
+            </ul>
+            <h5><strong>Benefits</strong></h5>
+            <ul>
+              <li><i class="ion-android-checkmark-circle"></i>Internship Opportunities</li>
+              <li><i class="ion-android-checkmark-circle"></i>Certificate of Appreciation </li>
+              <li><i class="ion-android-checkmark-circle"></i>Goodie</li>
+              <li><i class="ion-android-checkmark-circle"></i>Monetary Benefits  </li>
+
+            </ul>
+            
+            <br>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-6" id="contact" style="">
+       <div class= "container">
+        <div class="col-lg-12 content wow fadeInRight">
+            <div class="contact-about">
+             <h5><strong>Fill out the form</strong></h5>
+            <div class="form">
+              <div id="sendmessage">Your message has been sent. Thank you!</div>
+              <div id="errormessage"></div>
+              <form action="" method="post" role="form" class="contactForm ">
+                {% csrf_token %}
+                <div class="form-row">
+                  <div class="form-group col-lg-6">
+                    <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:1" data-msg="Please enter your name." />
+                    <div class="validation"></div>
+                  </div>
+                  <div class="form-group col-lg-6">
+                    <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
+                  
+                  <div class="validation"></div>
+                </div>
+                </div>
+                <div class="form-group">
+                  <input type="Number" class="form-control" name="contact_number" id="contact_number" placeholder="Contact Number" data-rule="minlen:4" data-msg="Please enter a correct phone number." />
+                  <div class="validation"></div>
+                </div>
+                
+                
+                <div class="form-group">
+                  <input type="text" class="form-control" name="college" id="college" placeholder="College" data-rule="required" data-msg="Please enter your college." />
+                  <div class="validation"></div>
+                </div>
+                <div class="form-group ">
+                    <input type="text" class="form-control" name="department" id="department" placeholder="Department" data-rule="required" data-msg="Please enter your department." />
+                    <div class="validation"></div>
+                  </div>
+                <div class="form-group">
+                  <input type="text" class="form-control" name="city" id="city" placeholder="City" data-rule="required" data-msg="Please enter your location." />
+                  <div class="validation"></div>
+                </div>
+                <div class="form-group">
+                  <input type="Number" class="form-control" name="graduating_year" id="graduating_year" placeholder="Graduating Year" data-rule="minlen:4" data-msg="Please enter a correct Graduating Year." />
+                  <div class="validation"></div>
+                </div>
+                <div class="form-group">
+                  <textarea  class="form-control" name="permanent_address" rows="5"  data-rule="required" data-msg="Please enter your Permanent Address." placeholder="Permanent Address"></textarea>
+                  <div class="validation"></div>
+                </div>
+                
+                <div class="form-group">
+                  <textarea class="form-control" name="past_experience" rows="5" data-rule="minlen:0" data-msg="" placeholder="Past Experience"></textarea>
+                  <div class="validation"></div>
+                </div>
+                
+                <input class="btn btn-outline-dark btn-block btn-block" type="submit" value="Submit" />
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class ="col-md-2"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

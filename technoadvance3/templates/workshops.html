@@ -1,0 +1,381 @@
+{% extends "header3.html" %}
+{% load staticfiles %}
+{% block content %}
+<style>
+
+.wrap {
+  margin: -33px auto;
+}
+ul.tabs {
+  width: 100%;
+  height: 80px;
+  margin: 0 auto;
+  list-style: none;
+  overflow: hidden;
+  padding: 0;
+}
+ul.tabs li {  
+  float: left;
+  width: 25%;
+
+  
+}
+ul.tabs li a {
+  position: relative;
+  display: block;
+  height: 100px;
+  margin-top: 40px;
+  padding: 10px 0 0 0;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 18px;
+  text-align: center; 
+  text-decoration: none;
+  color: #ffffff;
+  background: #6edeef;
+  -webkit-box-shadow: 8px 12px 25px 2px rgba(0,0,0,0.4);
+     -moz-box-shadow: 8px 12px 25px 2px rgba(0,0,0,0.4);
+          box-shadow: 8px 12px 25px 2px rgba(0,0,0,0.4);
+            border: 0px solid #000000;
+  -webkit-transition: padding 0.2s ease, margin 0.2s ease;
+       -moz-transition: padding 0.2s ease, margin 0.2s ease;
+         -o-transition: padding 0.2s ease, margin 0.2s ease;
+        -ms-transition: padding 0.2s ease, margin 0.2s ease;
+            transition: padding 0.2s ease, margin 0.2s ease;
+
+}
+.tabs li:first-child a {
+  z-index: 3;
+  -webkit-border-top-left-radius: 8px;
+-moz-border-radius-topleft: 8px;
+border-top-left-radius: 8px;
+}
+.tabs li:nth-child(2) a {
+  z-index: 1;
+
+}
+
+.tabs li:nth-child(3) a {
+  z-index: 1;
+  }
+
+.tabs li:last-child a {
+  z-index: 1;
+  -webkit-box-shadow: 2px 8px 25px -2px rgba(0,0,0,0.3);
+     -moz-box-shadow: 2px 8px 25px -2px rgba(0,0,0,0.3);
+          box-shadow: 2px 8px 25px -2px rgba(0,0,0,0.3);
+  -webkit-border-top-right-radius: 8px;
+-moz-border-radius-topright: 8px;
+border-top-right-radius: 8px;
+}
+ul.tabs li a:hover {
+  margin: 35px 0 0 0;
+  padding: 10px 0 5px 0;
+}
+ul.tabs li a.active {
+  margin: 30px 0 0 0;
+  padding: 10px 0 10px 0;
+  background: #545f60;
+  color: #6edeef;
+  /*color: #ff6831;*/
+  z-index: 4;
+  outline: none;
+}
+.group:before,
+.group:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+.group:after {
+    clear: both;
+}
+#content {
+  width: 100%;
+  height: 257px;
+  margin: 0 auto;
+  background: #545f60;
+-webkit-box-shadow: 2px 8px 25px -2px rgba(0,0,0,0.3);
+       -moz-box-shadow: 2px 8px 25px -2px rgba(0,0,0,0.3);
+            box-shadow: 2px 8px 25px -2px rgba(0,0,0,0.3);
+  -webkit-border-bottom-right-radius: 8px;
+-webkit-border-bottom-left-radius: 8px;
+-moz-border-radius-bottomright: 8px;
+-moz-border-radius-bottomleft: 8px;
+border-bottom-right-radius: 8px;
+border-bottom-left-radius: 8px;
+
+}
+.para{
+  font-family: 'Open Sans', sans-serif;
+  padding: 30px 40px;
+  color: #ffffff;
+  line-height: 26px;
+  font-size: 18px;
+  margin: 0;
+  overflow-y: auto;
+}
+#one {
+  
+}
+#two {
+  visibidlity:hidden;
+  
+}
+#three {
+  
+}
+#four{
+  }
+
+
+
+
+</style>
+</head>
+<body>
+  <div class = "container" style="margin-top: 100px">
+    <div class=" ">
+      <h3 class="text-center " style="font-size: 45px; padding:5px; box-shadow: 0 8px 5px rgba(0, 0, 0, .1);border-radius: 5px;"><strong> {{ workshops.workshop_title }} </strong></h3>
+      </div>
+    </div>
+    <div class = "container">
+      <div class = "row">
+        <div class = "col-md-6 wow fadeInRight">
+        
+          <img src = " {{ workshops.workshop_image.url }} "  class="img-fluid" alt="" 
+              style=" 
+                  -webkit-box-shadow: 8px 12px 25px 2px rgba(0,0,0,0.4);
+                  -moz-box-shadow: 8px 12px 25px 2px rgba(0,0,0,0.4);
+                   box-shadow: 8px 12px 25px 2px rgba(0,0,0,0.4);
+                   border-radius: 5px; ">
+        </div>
+      
+        <div class="col-md-6 wow fadeInLeft">
+          <div class="wrap" >
+  
+           <ul class="tabs group">
+             <li><a class="active" href="#/one">About</a></li>
+             <li><a href="#/two">Details</a></li>
+             <li><a href="#/four">Requirements</a></li>
+             <li><a href="#/three">Benefits</a></li>
+           </ul>
+           
+           <div id="content" class = "para">
+             <p id="one"> {{  workshops.workshop_about }}</p>
+              <p id="two"> {{ workshops.workshop_details }} </p>    
+            <p id="three"> {{ workshops.workshop_requirements }} </p>
+             <p id="four"> {{ workshops.workshop_benefits }} </p>
+            </div>
+  
+          </div>
+        </div>
+      </div>
+    </div>
+  <script src="{% static 'lib/jquery/jquery.min.js' %}"></script>
+
+<script>
+(function($) {
+
+  var tabs =  $(".tabs li a");
+  $("#content").find('#two').hide();
+  $("#content").find('#three').hide();
+  $("#content").find('#four').hide();
+  tabs.click(function() {
+    var content = this.hash.replace('/','');
+    tabs.removeClass("active");
+    $(this).addClass("active");
+    $("#content").find('p').hide();
+
+    $(content).fadeIn(200);
+  });
+
+})(jQuery);
+  </script>
+
+
+</div>
+<style>
+  #clients img{
+    border:1px solid black !important;
+    height:120px;
+    width:150px;
+    -webkit-box-shadow: 0px 0px 29px 7px rgba(0,0,0,0.31);
+    -moz-box-shadow: 0px 0px 29px 7px rgba(0,0,0,0.31);
+    box-shadow: 0px 0px 29px 7px rgba(0,0,0,0.31);
+  }
+  .client-slider p{
+    font-size: 18px;
+    text-align: center;
+    line-height: 2.5;
+  }
+</style>
+<section id = "clients" style = "margin-top:45px" >
+    <div class="container">
+    <div class="section-header">
+          <h3 class="section-title">Who we've worked with</h3>
+          <p class="section-description"> We are highly thankful to our partners who believed in us and gave us a chance to engage ourselves in their events. Let’s introduce you to some of India’s best institutes. </p>
+          <span class="section-divider"></span>
+            
+        <div class = "client-slider" >                
+        <div style="margin-right: 2.5vw;margin-left: 2.5vw;"><img src = "{% static 'img/clients/apogee.jpg' %}" alt=""><p>BITS Pilani</p></div>
+        <div style="margin-right: 2.5vw;margin-left: 2.5vw;"><img src = "{% static 'img/clients/cogni.png' %}"  alt="" ><p>IIT Roorkee</p></div>
+        <div style="margin-right: 2.5vw;margin-left: 2.5vw;"><img src = "{% static 'img/clients/techkriti.png' %}" alt=""><p>IIT Kanpur</p></div>
+        <div style="margin-right: 2.5vw;margin-left: 2.5vw;"><img src = "{% static 'img/clients/technext.jpg' %}"  alt=""><p>IIT (BHU)</p></div>
+        <div style="margin-right: 2.5vw;margin-left: 2.5vw;"><img src = "{% static 'img/clients/techniche.jpg' %}"  alt=""><p>IIT Guwahati</p></div>
+        <div style="margin-right: 2.5vw;margin-left: 2.5vw;"><img src = "{% static 'img/clients/wissenaire.png' %}"  alt=""><p>IIT Bhubaneswar</p></div>
+        <div style="margin-right: 2.5vw;margin-left: 2.5vw;"><img src = "{% static 'img/clients/exodia.png' %}"  alt=""><p>IIT Mandi</p></div>
+        
+        </div>
+      </div>
+  </div>
+  <div style = "height:70px"></div> 
+</section>
+ 
+<section id="contact">
+      <div class="container">
+        <div class="section-header">
+          <h3 class="section-title">GET IN TOUCH</h3>
+          <span class="section-divider"></span>
+       </div>
+        <div class="row wow fadeInUp">
+
+          <div class="col-lg-4 col-md-6">
+            <div class="contact-about">
+             <h5><strong>Diginique Techno Solutions</strong></h5>
+              <h6>Unique Advancement to Your Career</h6>
+              <br>
+              <p class = "text-justify"> <strong>Diginique, </strong> A domain of <strong>DiGi Infy,</strong> is a fast growing organization founded by <strong>IIT Graduates</strong> and <strong>Google AdWords </strong> certified consultant, which aims to revolutionize the field of technology and management seamlessly.</p>
+              <div class="social-links">
+                <a href="https://www.facebook.com/diginique2016/" class="facebook"><i class="fa fa-facebook"></i></a>
+                <a href="https://plus.google.com/114057180279997984204" class="google-plus"><i class="fa fa-google-plus"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6">
+            <div class="info">
+              <div>
+                <i class="ion-ios-location-outline"></i>
+                <p><strong>Head Office:</strong><br>118/190, Kaushalpuri Kanpur - 201812</p>
+              </div>
+              <div>
+                <i class="ion-ios-email-outline"></i>
+                <p><strong>For support or queries write us at:</strong> <br>diginique2016@gmail.com<br>support@diginique.com</p>
+              </div>
+
+              <div>
+                <i class="ion-ios-telephone-outline"></i>
+                <p><strong>Give us a call at:</strong><br>
+
+               +91-7985432632 <br> +91-9758961520</p>
+              </div>
+
+            </div>
+          </div>
+          
+          <div class="col-lg-5 col-md-12 contact-about">
+            <p><strong>Please fill in the form so that we may contact you</strong></p>
+            <div class="form">
+              <div id="sendmessage">Your message has been sent. Thank you!</div>
+              <div id="errormessage"></div>
+              <form action="" method="post" role="form" class="contactForm">
+                {% csrf_token %}
+                <div class="form-row">
+                  <div class="form-group col-lg-6">
+                    <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                    <div class="validation"></div>
+                  </div>
+                  <div class="form-group col-lg-6">
+                    <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
+                    <div class="validation"></div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <input type="Number" class="form-control" name="contact_number" id="contact_number" placeholder="Contact Number" data-rule="minlen:4" data-msg="Please enter a correct phone number." />
+                  <div class="validation"></div>
+                </div>
+                <div class="form-group">
+                  <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
+                  <div class="validation"></div>
+                </div>
+              <input class="btn btn-outline-dark btn-block btn-block" type="submit" value="Submit" />  
+              </form>
+            </div>
+          </div>
+
+        </div>
+
+
+          
+
+      </div>
+    </section><!-- #contact -->
+{% endblock %}
+
+
+<!--
+    <section id="gallery">
+      <div class="container">
+        <div class="section-header">
+          <h3 class="section-title">Gallery</h3>
+          <span class="section-divider"></span>
+          <p class="section-description">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
+        </div>
+
+        <div class="row no-gutters">
+
+          <div class="col-lg-4 col-md-6">
+            <div class="gallery-item wow fadeInUp">
+              <a href="{% static 'img/gallery/gallery-1.jpg' %}" class="gallery-popup">
+                <img src="{% static 'img/gallery/gallery-1.jpg' %}" alt="">
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="gallery-item wow fadeInUp">
+              <a href="{% static 'img/gallery/gallery-2.jpg' %}" class="gallery-popup">
+                <img src="{% static 'img/gallery/gallery-2.jpg' %}" alt="">
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="gallery-item wow fadeInUp">
+              <a href="{% static 'img/gallery/gallery-3.jpg' %}" class="gallery-popup">
+                <img src="{% static 'img/gallery/gallery-3.jpg' %}" alt="">
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="gallery-item wow fadeInUp">
+              <a href="{% static 'img/gallery/gallery-4.jpg' %}" class="gallery-popup">
+                <img src="{% static 'img/gallery/gallery-4.jpg' %}" alt="">
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="gallery-item wow fadeInUp">
+              <a href="{% static 'img/gallery/gallery-5.jpg' %}" class="gallery-popup">
+                <img src="{% static 'img/gallery/gallery-5.jpg' %}" alt="">
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="gallery-item wow fadeInUp">
+              <a href="{% static 'img/gallery/gallery-6.jpg' %}" class="gallery-popup">
+                <img src="{% static 'img/gallery/gallery-6.jpg' %}" alt="">
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+-->
+    <!-- #gallery -->
+    
+

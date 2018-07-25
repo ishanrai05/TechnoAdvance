@@ -1,0 +1,613 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Diginique</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="" name="keywords">
+  <meta content="" name="description">
+
+  <!-- Favicons -->
+  
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700|Open+Sans:300,300i,400,400i,700,700i" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Alegreya|Bitter|Cardo|Chivo|Cormorant+Garamond|Josefin+Sans|Nunito|Overpass|Proza+Libre|Raleway" rel="stylesheet">
+  <!-- Bootstrap CSS File -->
+  <link href="{% static 'lib/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'css/style3.css' %}" rel="stylesheet">
+
+  <!-- Libraries CSS Files -->
+  <link href="{% static 'lib/animate/animate.min.css' %}" rel="stylesheet">
+  <link href="{% static 'lib/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet">
+  <link href="{% static 'lib/ionicons/css/ionicons.min.css' %}" rel="stylesheet">
+  <!-- Main Stylesheet File -->
+  <link href="{% static 'css/style.css' %}" rel="stylesheet">
+  <link href="{% static 'css/style1.css' %}" rel="stylesheet">
+  
+  <link href="{% static 'lib/slick/slick-theme.css' %}" rel="stylesheet">
+  <link href="{% static 'lib/slick/slick.css' %}" rel="stylesheet">
+</head>
+<body class = "main">
+
+  <!--==========================
+    Header
+  ============================-->
+
+    <header id="header" class = "header-fixed-dobara">
+    <div class="container-fluid">
+      
+      <div id="logo" class="pull-left" style="">
+        <!--<h1><a href="{%url 'techno:index' %}" class="scrollto">Diginque</a></h1> -->
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <a href="{%url 'techno:index' %}"><img src=" {% static 'img/Logos/diginique-logo.jpeg' %} " alt="" title="" style = "width:auto;height:55px;position: absolute;left:100px"></a>
+      </div>
+      <div class = "container">
+      <nav id="nav-menu-container">
+        <ul class="nav-menu ">
+             <li class="menu-active"><a href="{%url 'techno:index' %}">Home</a></li>
+             <li><a href=" {% url 'techno:about'  %}">About Us</a></li>
+             <li><a href=" {% url 'techno:workshop'  %}">Workshops</a></li>
+             <li><a href=" {% url 'techno:upcoming_events_temporary' %} ">Upcoming Events</a></li>
+             <li><a href=" {% url 'techno:become_a_campus_ambassador' %} ">Be a Campus Ambassador</a></li>
+             <li><a href=" {% url 'techno:request_a_workshop_view' %} ">Organize a Workshop</a></li>
+             <li><a href=" {% url 'techno:upcoming_events_temporary' %} ">Certificate Verification</a></li>
+             <li><a href=" {% url 'techno:contact_us' %}">Contact Us</a></li>
+             <!-- <li  class = "mobile-display" style="position:absolute; right:100px; top:5px; "><a href="{%url 'techno:index' %}"><img src=" {% static 'img/Logos/DIGIINFY.png' %} " alt="" title="" style = "height:55px;"></a></li> -->
+        </ul>
+      </nav><!-- #nav-menu-container -->
+        </div>
+    </div>
+  </header><!-- #header -->
+
+<!--==========================
+      Product Featuress Section
+    ============================-->
+<style>
+  .banner > article p{
+    text-transform: none;
+    color:#000;
+    letter-spacing: 0.03rem;
+    font-weight: 450;
+  } 
+  .banner strong{
+    color:#000;
+  }
+  .banner h1, .banner h2, .banner h3, .banner h4, .banner h5, .banner h6 {
+    color: #000;
+}
+.about_us_1 img{
+  display: block !important;
+  z-index: 1!important;
+}
+.about_us_1 {
+  padding-top: 17vh;
+  height: 150vh;
+}
+.banner  > article {
+  height:310vh!important;
+}
+
+.content1 {
+  background: linear-gradient(130deg, #07d9a3, #048fee);
+  background-size: 400% 400%;
+  -webkit-animation: gradient 16s ease infinite;
+  animation: gradient 16s ease infinite;
+  margin: auto;
+  padding: 50px;
+  width: 100%;
+  max-width: 100%;
+  min-width: 300px;
+}
+
+.slick-slider {
+  margin: 30px auto 50px;
+}
+
+.slick-prev,
+.slick-next {
+  color: white;
+  opacity: 1;
+  height: 40px;
+  width: 40px;
+  margin-top: -20px;
+}
+.slick-prev path,
+.slick-next path {
+  fill: rgba(255, 255, 255, 0.4);
+}
+.slick-prev:hover path,
+.slick-next:hover path {
+  fill: #FFFFFF;
+}
+
+.slick-prev {
+  left: -35px;
+}
+
+.slick-next {
+  right: -35px;
+}
+
+.slick-prev:before,
+.slick-next:before {
+  content: none;
+}
+
+.slick-dots li button:before {
+  color: rgba(255, 255, 255, 0.4);
+  opacity: 1;
+  font-size: 8px;
+}
+
+.slick-dots li.slick-active button:before {
+  color: #FFFFFF;
+}
+
+.quote-container {
+  min-height: 200px;
+  color: #666666;
+  font-size: 36px;
+  margin: 0 20px;
+  position: relative;
+}
+.quote-container:hover {
+  cursor: -webkit-grab;
+  cursor: grab;
+}
+.quote-container .portrait {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  height: 140px;
+  width: 140px;
+  overflow: hidden;
+}
+.quote-container .portrait img {
+  display: block;
+  height: auto;
+  width: 100%;
+}
+.quote-container .quote {
+  position: relative;
+  z-index: 600;
+  padding: 40px 0 40px 180px;
+  margin: 0;
+  font-size: 20px;
+  font-style: italic;
+  line-height: 1.4 !important;
+  font-family: Calibri;
+  color: white;
+}
+.quote-container .quote p {
+  position: relative;
+  margin-bottom: 20px;
+}
+.quote-container .quote p:first-child:before {
+  content: '\201C';
+  color: rgba(255, 255, 255, 0.44);
+  font-size: 7.5em;
+  font-weight: 700;
+  opacity: 1;
+  position: absolute;
+  top: -.4em;
+  left: -.2em;
+  text-shadow: none;
+  z-index: -10;
+}
+.quote-container .quote cite {
+  display: block;
+  font-size: 14px;
+}
+.quote-container .quote cite span {
+  font-size: 16px;
+  font-style: normal;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.dragging .quote-container {
+  cursor: -webkit-grabbing;
+  cursor: grabbing;
+}
+
+.octogon {
+  -webkit-clip-path: polygon(50% 0%, 38.11% 6.7%, 24.99% 6.72%, 18.06% 18.44%, 6.7% 25%, 6.56% 38.64%, 0% 50%, 6.7% 61.89%, 6.7% 75%, 18.44% 81.94%, 25% 93.3%, 38.64% 93.44%, 50% 100%, 61.88% 93.3%, 75% 93.3%, 81.94% 81.56%, 93.3% 74.9%, 93.44% 61.36%, 100% 50%, 93.3% 38.11%, 93.3% 25%, 81.56% 18.06%, 74.96% 6.7%, 61.36% 6.56%, 50% 0%);
+  clip-path: url(#octogon);
+  height: 140px;
+  width: 140px;
+}
+
+@-webkit-keyframes gradient {
+  0% {
+    background-position: 5% 0%;
+  }
+  50% {
+    background-position: 96% 100%;
+  }
+  100% {
+    background-position: 5% 0%;
+  }
+}
+@keyframes gradient {
+  0% {
+    background-position: 5% 0%;
+  }
+  50% {
+    background-position: 96% 100%;
+  }
+  100% {
+    background-position: 5% 0%;
+  }
+}
+
+body{}
+
+</style>
+    <section class="banner full" style="padding: 0;min-height: 0vh;height: 60vh !important;margin-bottom: -0px!important;">
+
+        <article>
+          <img src=" {% static 'img/diginique_about us.jpeg' %}" alt="" style="height:100%!important" />
+          <div class="inner">
+        
+      <div style="margin-top:200px;
+                  -webkit-box-shadow: 0px 0px 87px -24px rgba(0,0,0,0.31);
+                  -moz-box-shadow: 0px 0px 87px -24px rgba(0,0,0,0.31);
+                  box-shadow: 0px 0px 87px -24px rgba(0,0,0,0.31);">      
+      <section  id="about" style="background-color: #f3f3f3;border-radius:10px;">
+        <div style="padding-right: 7vw;padding-left: 7vw; ">
+      <div class="container">
+        <header class = "wow fadeInUp"><br><br>
+              <h3 style="font-size:61px !important;font-family: 'Cormorant Garamond', serif;" > <strong>About Us</strong> </h3>
+            </header>
+          
+        <div class="row">
+          
+          <div class="content wow fadeInUp text-justify">
+            <p style="font-family: 'Proza Libre', sans-serif;">
+              <strong>Diginique</strong>, A unit of <strong>DiGi Infy</strong> is a fast growing organization driven by passion towards the betterment of students in the field of technology and management. It is led by a group of intellectuals who have been working day and night to refine the advancement in the field of education. Our services bridge the gap of campus to corporate so that no any participant is left behind in this era of cut throat competition. 
+            </p>
+            <p>We provide techno-managerial workshops on various topics like:
+              <strong>
+  
+              Android App Development,
+              Machine Learning,
+              Internet of Things (IOT),
+              Ethical Hacking and Cyber Security,
+              Digital Marketing, etc.
+  
+          </strong>
+          especially designed for enthusiastic learners in the best way to gain practical knowledge in minimum time like two days and the students get hands on experience session by industry experts.</p>
+            <br>
+            </div>
+
+          </div>
+          <section class="about_us_1">
+          
+          <div class="row text-justify">
+            <div class="col-md-5">
+              <div  style="margin: 20px 20px;padding: 26px 33px;box-shadow: 0px 0px 87px -24px rgba(0,0,0,0.31);z-index: 200!important;position: absolute;top: -25%;left: 2%;right: 8%; background-color: #fff;">
+                <h4>Our Philosophy:</h4>
+                <p>Delivering unique content and providing an excellent training is the philosophy of our visionaries. We expect participants to design their talent and to move on the path paved for them.
+              </p>
+            </div>
+            <div style="position: absolute; top: 65%;right: 3%;">
+              <img src = " {% static 'img/teamsm.jpg' %}" class="img-fluid image-card" style="border-radius: 100%;" >
+            </div>
+
+            </div>
+            <div class="col-md-1"></div>
+            <div class="col-md-5">
+              
+                <div class="img-fluid" >
+              <img src = "{% static 'img/about-1.jpg' %}" class="img-fluid image-card" style="border-radius: 100%;">
+            </div>
+            <div style="margin: 20px 20px;padding: 26px 33px;box-shadow: 0px 0px 87px -24px rgba(0,0,0,0.31); z-index: 200!important; position: absolute;top: 75%;left: -12%;right: 17%; background-color: #fff;">
+                <h4>Our Future:</h4>
+                 <p>Diginique envisions a future full of enthusiasm, overwhelmed with technology, and dealt with proper management. Our motive lies in dedication towards perfection and perfection towards achievement.
+               </p>
+             </div>
+            </div>
+        </div>
+      </section>
+      <section class="about_us_1 container-fluid" style="margin-top: -40%;background-color: #8cd1c1">
+        <div class="row text-center">
+            <header class = "wow fadeInUp">
+              <h3 style="font-size:61px !important;text-align:center!important; margin-right: -150%;font-family: 'Bitter', serif;" > <strong>Our Visionaries</strong> </h3>
+            </header>
+          </div>
+          <div class="row text-justify" style="font-family: 'Raleway', sans-serif!important;">
+            
+            <div class="col-md-3">
+              <img src = " {% static 'img/team/awasthi.jpg' %}" class="img-fluid" >
+              <h5 class="text-center" style="line-height: 3.4rem">Co-Founder and CEO</h5>
+            </div>
+            <div class="col-md-9">
+              <div  style="margin: 6% 12%; margin-left: -2%;margin-right: -15%;padding: 5% 9%;box-shadow: 18px 14px 64px -13px rgba(0,0,0,0.15);z-index: 200!important;background-color: #fff;">
+                <p><strong>Achyut Awasthi</strong>, a very smart working man who has done remarkable works in the field of Digital Marketing and Management, is a man of his words. He highlights the fact that we need you more than you need us, perhaps, that is why, it is not only our commitment but our duty to serve you the best. Keeping this motive in mind, our leader has worked day and night to touch new heights of knowledge in Digital Marketing and arm you with only and only the best in your arsenal. A Google AdWords Certified  Digital Marketing Consultant, who has assisted in developing Digital Marketing Strategies for some of the prestigious Indian companies and has played a key role in spreading awareness about Digital Marketing .
+
+              </p>
+            </div>
+            </div>
+            
+            </div>
+            <div class="row text-justify">
+
+            <div class="col-md-9"style="font-family: 'Raleway', sans-serif!important;">
+                <div style="margin: 6% 12%;margin-left: -15%;margin-right: -2%;padding: 6% 9%;box-shadow: -14px 14px 53px -12px rgba(0,0,0,0.16); z-index: 200!important; background-color: #fff;">
+                 <p><strong>Sudhir Chaudhary</strong> is an <strong>IIT Roorkee</strong> graduate who has worked as <strong>Manager</strong> Workshops at Cognizance, IIT Roorkee. He primarily looks after the clients’ need from handling technical problems to solving any issue, he can fulfill it all very gracefully.
+                 <br>Being enthusiastic and curious about everything (from a tiny needle to a giant building), he keeps continuously improving the quality and consistency of our educational programs along with his academic staff. He keeps course content undergoing a thorough accreditation process which ensures that there is regular improvement in the quality and consistency of our educational programs.
+                </p>
+               </div>
+              </div>
+                <div class="col-md-3" >
+               <img src = "{% static 'img/team/team-4.jpg' %}" class="img-fluid" style="margin-top:30%; ">
+              <h5 class="text-center" style="line-height: 3.4rem">Co-Founder and CTO</h5>
+
+               </div>
+                
+        </div>
+      </section>
+      </div>
+
+       
+<!-- #about -->
+
+    
+    <style>
+  #clients img{
+    border:1px solid black !important;
+    height:120px;
+    width:150px;
+    -webkit-box-shadow: 0px 0px 29px 7px rgba(0,0,0,0.31);
+    -moz-box-shadow: 0px 0px 29px 7px rgba(0,0,0,0.31);
+    box-shadow: 0px 0px 29px 7px rgba(0,0,0,0.31);
+  
+  }
+  .client-slider p{
+    font-size: 18px;
+    text-align: center;
+    line-height: 2.5;
+  }
+  .client-slider img{
+    display: block !important;
+  }
+</style>
+<section id = "clients" style = "margin-top:45px" >
+    <div class="container">
+    <div class="section-header">
+          <h3 class="section-title">Who we've worked with</h3>
+          <p class="section-description"> We are highly thankful to our partners who believed in us and gave us a chance to engage ourselves in their events. Let’s introduce you to some of India’s best institutes. </p>
+          <span class="section-divider"></span>
+            
+        <div class = "client-slider" >                
+        <div style="margin-right: 2.5vw;margin-left: 2.5vw;"><img src = "{% static 'img/clients/apogee.jpg' %}" alt=""><p>BITS Pilani</p></div>
+        <div style="margin-right: 2.5vw;margin-left: 2.5vw;"><img src = "{% static 'img/clients/cogni.png' %}"  alt="" ><p>IIT Roorkee</p></div>
+        <div style="margin-right: 2.5vw;margin-left: 2.5vw;"><img src = "{% static 'img/clients/techkriti.png' %}" alt=""><p>IIT Kanpur</p></div>
+        <div style="margin-right: 2.5vw;margin-left: 2.5vw;"><img src = "{% static 'img/clients/technext.jpg' %}"  alt=""><p>IIT (BHU)</p></div>
+        <div style="margin-right: 2.5vw;margin-left: 2.5vw;"><img src = "{% static 'img/clients/techniche.jpg' %}"  alt=""><p>IIT Guwahati</p></div>
+        <div style="margin-right: 2.5vw;margin-left: 2.5vw;"><img src = "{% static 'img/clients/wissenaire.png' %}"  alt=""><p>IIT Bhubaneswar</p></div>
+        <div style="margin-right: 2.5vw;margin-left: 2.5vw;"><img src = "{% static 'img/clients/exodia.png' %}"  alt=""><p>IIT Mandi</p></div>
+        </div>
+      </div>
+  </div>
+  <div style = "height:70px"></div> 
+</section>
+
+<section id="contact"style="box-shadow:none;">
+      <div class="container">
+        <div class="section-header">
+          <h3 class="section-title">Get In Touch</h3>
+          <span class="section-divider"></span>
+       </div>
+        <div class="row wow fadeInUp">
+
+          <div class="col-lg-4 col-md-6">
+            <div class="contact-about">
+             <h5><strong>Diginique Techno Solutions</strong></h5>
+              <h6>Unique Advancement to Your Career</h6>
+              <br>
+              <p class = "text-justify"><strong>Diginique, </strong> A domain of <strong>DiGi Infy,</strong> is a fast growing organization founded by <strong>IIT Graduates</strong> and <strong>Google AdWords </strong> certified consultant, which aims to revolutionize the field of technology and management seamlessly.</p>
+              <div class="social-links">
+                <a href="https://www.facebook.com/diginique2016/" class="facebook"><i class="fa fa-facebook"></i></a>
+                <a href="https://plus.google.com/114057180279997984204" class="google-plus"><i class="fa fa-google-plus"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6">
+            <div class="info">
+              <div>
+                <i class="ion-ios-location-outline"></i>
+                <p><strong>Head Office:</strong><br>118/170, Kaushalpuri Kanpur - 208012</p>
+              </div>
+              <div>
+                <i class="ion-ios-email-outline"></i>
+                <p><strong>For support or queries write us at:</strong> <br>diginique2016@gmail.com<br>support@diginique.com</p>
+              </div>
+
+              <div>
+                <i class="ion-ios-telephone-outline"></i>
+                <p><strong>Give us a call at:</strong><br>
+
+               +91-7985432632 <br> +91-9758961520</p>
+              </div>
+
+            </div>
+          </div>
+          
+          <div class="col-lg-5 col-md-12 contact-about">
+            <p><strong>Please fill in the form so that we may contact you</strong></p>
+            <div class="form">
+              <div id="sendmessage">Your message has been sent. Thank you!</div>
+              <div id="errormessage"></div>
+              <form action="" method="post" role="form" class="contactForm">
+                {% csrf_token %}
+                <div class="form-row">
+                  <div class="form-group col-lg-6">
+                    <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                    <div class="validation"></div>
+                  </div>
+                  <div class="form-group col-lg-6">
+                    <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
+                    <div class="validation"></div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <input type="Number" class="form-control" name="contact_number" id="contact_number" placeholder="Contact Number" data-rule="minlen:4" data-msg="Please enter a correct phone number." />
+                  <div class="validation"></div>
+                </div>
+                <div class="form-group">
+                  <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
+                  <div class="validation"></div>
+                </div>
+              <input class="btn btn-outline-dark btn-block btn-block text-secondary" type="submit" value="Submit" />  
+              </form>
+            </div>
+          </div>
+
+        </div>
+
+
+          
+
+      </div>
+    </section><!-- #contact -->
+
+  
+
+  <!--==========================
+    Footer
+  ============================-->
+  <footer id="footer" style="    margin-bottom: -5%;margin-left: -9%;margin-right: -9%;">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 text-lg-left text-center">
+          <div class="copyright">
+            &copy;Copyright 2016 <strong> DiGi Infy. </strong> All Rights Reserved.
+          </div>
+          <!-- <div  class = "mobile-display" style="position:absolute; right:100px; top:5px; "><a href="{%url 'techno:index' %}"><img src=" {% static 'img/Logos/DIGIINFY.png' %} " alt="" title="" style = "height:55px;"></a></div>
+        -->
+          <div class="credits">
+           Designed by <a href="https://www.linkedin.com/in/ishan-rai-468231157/">Ishan</a> &amp; <a href="https://www.linkedin.com/in/durgesh-kumar-807233157/">Durgesh</a>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <nav class="footer-links text-lg-right text-center pt-2 pt-lg-0">
+            <a href="{%url 'techno:index' %}" class="scrollto">Home</a>
+            <a href="{% url 'techno:about'  %}" class="scrollto">About</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Use</a>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </footer><!-- #footer -->
+</section>
+</div></div>
+   </article> 
+      </section>
+
+  </main>
+  <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+
+  <!-- JavaScript Libraries -->
+  <script src="{% static 'lib/jquery/jquery.min.js' %}"></script>
+  <script src="{% static 'lib/jquery/jquery-migrate.min.js' %}"></script>
+  <script src="{% static 'lib/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'lib/easing/easing.min.js' %}"></script>
+  <script src="{% static 'lib/wow/wow.min.js' %}"></script>
+  <script src="{% static 'lib/superfish/hoverIntent.js' %}"></script>
+  <script src="{% static 'lib/superfish/superfish.min.js' %}"></script>
+  <script src="{% static 'lib/magnific-popup/magnific-popup.min.js' %}"></script>
+  <script src="{% static 'lib/slick/slick.js' %}"></script>
+  <script src="{% static 'lib/slick/slick.min.js' %}"></script>
+  <script src= "{% static 'js/jquery.scrollex.min.js' %}"  ></script>
+  <script src= "{% static 'js/skel.min.js' %}" ></script>
+  <script src= "{% static 'js/util.js' %}" ></script>
+  <script src= "{% static 'js/main.js' %}" ></script>
+
+  <!-- Contact Form JavaScript File -->
+  <script src="{% static 'contactform/contactform.js' %}"></script>
+
+  <!-- Template Main Javascript File -->
+
+</body>
+</html>
+
+    <!--    
+<div class='content1' style="">
+  
+<div class="section-header">
+          <h1 class="text-light text-center"><strong>What our clients say</strong></h1>
+          <p class="section-description text-light"> We value the best possible recommendations which come from the people who we have worked with– our clients. Some of the independent views are mentioned below.</p>
+          
+       </div>
+      
+
+  <div class=' container slider single-item'>
+    <div>
+    <div class='quote-container'>
+      <div class='portrait octogon'>
+        <img alt='' src='http://www.tuacahntech.com/uploads/6/1/7/9/6179841/6166205_orig.jpg'>
+      </div>
+      <div class='quote'>
+        <blockquote>
+          <p>Meditation shabby chic master cleanse banh mi Godard. Asymmetrical Wes Anderson Intelligentsia you probably haven't heard of them.</p>
+          <cite>
+            <span>Kristi McSweeney</span>
+            <br>
+            Thundercats twee
+            <br>
+            Austin selvage beard
+          </cite>
+        </blockquote>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class='quote-container'>
+      <div class='portrait octogon'>
+        <img alt='' src='http://static1.squarespace.com/static/51579fb2e4b0fc0d9469ff97/56cc83dfe707ebc39cf3269f/56d0b59e27d4bde4665fded3/1457365822199/'>
+      </div>
+      <div class='quote'>
+        <blockquote>
+          <p>Bespoke occupy cred seitan. Austin street art freegan Truffaut leggings aesthetic, salvia chia Brooklyn flexitarian. Single-origin coffee before they sold out health goth, cornhole irony keffiyeh Austin taxidermy mlkshk blog trust fund banh mi you probably haven't heard of them.</p>
+          <cite>
+            <span>Dina Anderson</span>
+            <br>
+            Blue Bottle keffiyeh
+            <br>
+            Sartorial locavore Schlitz ennui
+          </cite>
+        </blockquote>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<svg>
+  <defs>
+    <clipPath clipPathUnits='objectBoundingBox' id='octogon'>
+      <polygon points='0.50001 0.00000, 0.61887 0.06700, 0.75011 0.06721, 0.81942 0.18444, 0.93300 0.25001, 0.93441 0.38641, 1.00000 0.49999, 0.93300 0.61887, 0.93300 0.75002, 0.81556 0.81944, 0.74999 0.93302, 0.61357 0.93444, 0.50001 1.00000, 0.38118 0.93302, 0.24998 0.93302, 0.18056 0.81556, 0.06700 0.74899, 0.06559 0.61359, 0.00000 0.49999, 0.06700 0.38111, 0.06700 0.25001, 0.18440 0.18058, 0.25043 0.06700, 0.38641 0.06559, 0.50001 0.00000'></polygon>
+    </clipPath>
+  </defs>
+</svg>
+-->
+
+    <!--==========================
+      Call To Action Section
+    ============================-->
+    
+<!-- #call-to-action -->
+
+    <!--==========================
+      More Features Section
+    ============================-->
+    <!--==========================
+      Contact Section
+    ============================-->
+

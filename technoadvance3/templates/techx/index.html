@@ -1,0 +1,590 @@
+{% extends "header3.html"%}
+{% load tags %}
+{% load staticfiles %}
+{% block content %}
+
+
+
+  <!--==========================
+    Intro Section
+  ============================-->
+  <style>
+  body{
+    background-color: #efefef !important;
+  }
+</style>
+  <section class="banner full"  style="margin: 0 !important;padding:0 !important;">
+        <article>
+          <img src=" {% static 'img/Intro_image.jpeg' %}" alt="" />
+          <div class="inner">
+            <header class = "wow fadeInUp">
+              <h3 style="font-size:61px !important;font-family: 'Chivo', sans-serif;" > Welcome to Diginique </h3>
+              <p style="font-weight:600;font-family: 'Overpass', sans-serif;">Unique advancement to your career.</p>
+              <a href="{% url 'techno:about'  %}">
+              <button class="fillup">Know More</button></a>
+              </a>
+            </header>
+          </div>
+        </article>
+        
+     
+      </section>
+  <main id="main">
+
+    <!--==========================
+      About Us Section
+    ============================-->
+
+    <section id="about" class="">
+
+      <div class="container-fluid " style="background-color: #fff; padding-bottom: 5%;margin-bottom: 3%;padding-top: 7%; z-index:999; margin-top:-5% !important;">
+        
+        <div class = "row">
+          <div class = "col-lg-1"></div>
+        <div class = "col-md-6">
+        <div class="section-header">
+          <h3 class="section-title" style="font-family: 'Nunito', sans-serif;">Who We Are?</h3>
+          <p class="section-description" style="font-family: 'Alegreya', serif;"> <strong>Diginique, </strong> A domain of <strong>DiGi Infy,</strong> is a fast growing organization founded by <strong>IIT Graduates</strong> and <strong>Google AdWords </strong> certified consultant, which aims to revolutionize the field of technology and management seamlessly. </p>
+        </div>
+        <br><br><br>
+        </div>
+        
+        <div class = "col-md-4">
+          <img src=" {% static 'img/who_we_are.jpg' %} " class = "img-fluid image-card">
+        </div>
+      </div>
+      <div class = "col-lg-2"></div>
+      </div>
+      
+
+      <div class="container" style="">
+        <div class="section-header">
+          <h3 class="section-title" style="font-family: 'Nunito', sans-serif;">What We offer?</h3>
+          <p class="section-description" style="font-family: 'Alegreya', serif;"> Diginique presents before you the plethora of pedagogic workshops across various fields of technology and management. Be it any college, technical event, or any college fest, we deliver quality workshops with the help of our friendly, congenial, and laborious facilitators. </p>
+          <span class="section-divider"></span>
+        </div>
+        <br><br><br>
+      </div>
+<div class = "container-fluid wow fadeInUp" >
+    <div class="row">
+      <div class="category-section col-xs-12 col-sm-6 col-md-4">
+        <div class="image-card">
+          <div class="image-card-content">
+              <div class="card-thumb">
+               <img src="{% static 'img/index_page/diginique_cse.jpg' %}" alt="">
+              </div>
+              <div class="text-details">
+                 <h3 class="text-success"><strong>CSE and IT</strong></h5>
+                      <p class="text-light mb-0"></p>
+                <a href='{% url "techno:workshop" %}'><i class="fa fa-fw fa-play"></i> Know More</a>
+              </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="category-section col-xs-12 col-sm-6 col-md-4">
+        <div class="image-card">
+          <div class="image-card-content">
+              <div class="card-thumb">
+               <img src="{% static 'img/index_page/diginique_management.jpg' %}" alt="">
+              </div>
+              <div class="text-details">
+                <h3 class="text-secondary "><strong>Marketing and Management</strong></h4>
+                      <p class="text-light mb-0"></p>
+                <a href='{% url "techno:workshop" %}'><span><i class="fa fa-fw fa-play"></i> Know More</span></a>
+              </div>
+          </div>
+        </div>
+       </div>
+
+      <div class="category-section col-xs-12 col-sm-6 col-md-4">
+        <div class="image-card">
+          <div class="image-card-content">
+              <div class="card-thumb">
+               <img src="{% static 'img/index_page/diginique_robotics.jpg' %}" alt="">
+              </div>
+              <div class="text-details">
+                <h3 class=" text-warning"><strong>Robotics</strong></h5>
+                      <p class="text-light mb-0"></p>
+           
+                <a href='{% url "techno:workshop" %}'><i class="fa fa-fw fa-play"></i> Know More</a>
+              </div>
+          </div>
+        </div>
+      </div>
+       
+    </div>
+    <div class="row">
+      <div class="category-section col-xs-12 col-sm-6 col-md-4">
+        <div class="image-card">
+          <div class="image-card-content">
+              <div class="card-thumb">
+               <img src="{% static 'img/index_page/diginique_electrical.jpeg' %}" alt="">
+              </div>
+              <div class="text-details">
+                <h3 class="text-info "><strong>Electrical and Electronics</strong></h5>
+                  <p class="text-light mb-0"></p>
+              
+                <a href='{% url "techno:workshop" %}'><i class="fa fa-fw fa-play"></i> Know More</a>
+              </div>
+          </div>
+        </div>
+      </div>
+      <div class="category-section col-xs-12 col-sm-6 col-md-4">
+        <div class="image-card">
+          <div class="image-card-content">
+              <div class="card-thumb">
+               <img src="{% static 'img/index_page/diginique_civil.jpeg' %}" alt="">
+              </div>
+              <div class="text-details">
+                <h3 class="text-danger "><strong>Civil Engineering</strong></h4>
+                      <p class="text-light mb-0"></p>
+                <a href='{% url "techno:workshop" %}'><span><i class="fa fa-fw fa-play"></i> Know More</span></a>
+              </div>
+          </div>
+        </div>
+       </div>
+  
+
+      <div class="category-section col-xs-12 col-sm-6 col-md-4">
+        <div class="image-card">
+          <div class="image-card-content">
+              <div class="card-thumb">
+               <img src="{% static 'img/index_page/diginique_mechanical.jpeg' %}" alt="">
+              </div>
+              <div class="text-details">
+                 <h3 class="text-light "><strong>Mechanical and Mechatronics</strong></h4>
+                  <p class="text-light mb-0"></p>
+                <a href='{% url "techno:workshop" %}'><i class="fa fa-fw fa-play"></i> Know More</a>
+              </div>
+          </div>
+        </div>
+      </div>
+  </div>    
+</div>
+    <div class = "text-center wow fadeInUp" style="margin-top:50px">
+          <!-- <div class="col-lg-6 about-img wow fadeInLeft mt-5">
+            <img src="{% static 'img/about-img.jpg' %}" alt="">
+          </div> -->
+                <a href="{% url 'techno:workshop'  %}"><button class="fill">Know More</button></a>
+        
+        </div>
+    </section>
+<style>
+  #clients img{
+    border:1px solid black !important;
+    height:120px;
+    width:150px;
+    -webkit-box-shadow: 0px 0px 29px 7px rgba(0,0,0,0.31);
+    -moz-box-shadow: 0px 0px 29px 7px rgba(0,0,0,0.31);
+    box-shadow: 0px 0px 29px 7px rgba(0,0,0,0.31);
+  }
+  .client-slider p{
+    font-size: 18px;
+    text-align: center;
+    line-height: 2.5;
+  }
+</style>
+<section id = "clients" style = "margin-top:45px" >
+    <div class="container">
+    <div class="section-header">
+          <h3 class="section-title">Who we've worked with</h3>
+          <p class="section-description"> We are highly thankful to our partners who believed in us and gave us a chance to engage ourselves in their events. Let’s introduce you to some of India’s best institutes. </p>
+          <span class="section-divider"></span>
+            
+        <div class = "client-slider" >                
+        <div style="margin-right: 2.5vw;margin-left: 2.5vw;"><img src = "{% static 'img/clients/apogee.jpg' %}" alt=""><p>BITS Pilani</p></div>
+        <div style="margin-right: 2.5vw;margin-left: 2.5vw;"><img src = "{% static 'img/clients/cogni.png' %}"  alt="" ><p>IIT Roorkee</p></div>
+        <div style="margin-right: 2.5vw;margin-left: 2.5vw;"><img src = "{% static 'img/clients/techkriti.png' %}" alt=""><p>IIT Kanpur</p></div>
+        <div style="margin-right: 2.5vw;margin-left: 2.5vw;"><img src = "{% static 'img/clients/technext.jpg' %}"  alt=""><p>IIT (BHU)</p></div>
+        <div style="margin-right: 2.5vw;margin-left: 2.5vw;"><img src = "{% static 'img/clients/techniche.jpg' %}"  alt=""><p>IIT Guwahati</p></div>
+        <div style="margin-right: 2.5vw;margin-left: 2.5vw;"><img src = "{% static 'img/clients/wissenaire.png' %}"  alt=""><p>IIT Bhubaneswar</p></div>
+        <div style="margin-right: 2.5vw;margin-left: 2.5vw;"><img src = "{% static 'img/clients/exodia.png' %}"  alt=""><p>IIT Mandi</p></div>
+        
+        </div>
+      </div>
+  </div>
+  <div style = "height:70px"></div> 
+</section>
+<section id="contact">
+      <div class="container">
+        <div class="section-header">
+          <h3 class="section-title">GET IN TOUCH</h3>
+          <span class="section-divider"></span>
+       </div>
+        <div class="row wow fadeInUp">
+
+          <div class="col-lg-4 col-md-6">
+            <div class="contact-about">
+             <h5><strong>Diginique Techno Solutions</strong></h5>
+              <h6>Unique Advancement to Your Career</h6>
+              <br>
+              <p class = "text-justify"> <strong>Diginique, </strong> A domain of <strong>DiGi Infy,</strong> is a fast growing organization founded by <strong>IIT Graduates</strong> and <strong>Google AdWords </strong> certified consultant, which aims to revolutionize the field of technology and management seamlessly.</p>
+              <div class="social-links">
+                <a href="https://www.facebook.com/diginique2016/" class="facebook"><i class="fa fa-facebook"></i></a>
+                <a href="https://plus.google.com/114057180279997984204" class="google-plus"><i class="fa fa-google-plus"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6">
+            <div class="info">
+              <div>
+                <i class="ion-ios-location-outline"></i>
+                <p><strong>Head Office:</strong><br>118/190, Kaushalpuri Kanpur - 201812</p>
+              </div>
+              <div>
+                <i class="ion-ios-email-outline"></i>
+                <p><strong>For support or queries write us at:</strong> <br>diginique2016@gmail.com<br>support@diginique.com</p>
+              </div>
+
+              <div>
+                <i class="ion-ios-telephone-outline"></i>
+                <p><strong>Give us a call at:</strong><br>
+
+               +91-7985432632 <br> +91-9758961520</p>
+              </div>
+
+            </div>
+          </div>
+          
+          <div class="col-lg-5 col-md-12 contact-about">
+            <p><strong>Please fill in the form so that we may contact you</strong></p>
+            <div class="form">
+              <div id="sendmessage">Your message has been sent. Thank you!</div>
+              <div id="errormessage"></div>
+              <form action="" method="post" role="form" class="contactForm">
+                {% csrf_token %}
+                <div class="form-row">
+                  <div class="form-group col-lg-6">
+                    <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                    <div class="validation"></div>
+                  </div>
+                  <div class="form-group col-lg-6">
+                    <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
+                    <div class="validation"></div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <input type="Number" class="form-control" name="contact_number" id="contact_number" placeholder="Contact Number" data-rule="minlen:4" data-msg="Please enter a correct phone number." />
+                  <div class="validation"></div>
+                </div>
+                <div class="form-group">
+                  <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
+                  <div class="validation"></div>
+                </div>
+              <input class="btn btn-outline-dark btn-block btn-block" type="submit" value="Submit" />  
+              </form>
+            </div>
+          </div>
+
+        </div>
+
+
+          
+
+      </div>
+    </section><!-- #contact -->
+
+  </main>
+
+
+{% endblock %}
+
+
+    <!-- #about -->
+          <!--
+          <div class = "container-fluid  wow fadeInUp">
+          <div class="row ">
+            <div class="col-lg-4 col-md-12 ">
+              <div class="service-box mt-5 mx-auto">
+                <div class = "row">
+                <div class="col-md-2">
+                  <i class="fa fa-3x fa-code blue mb-3 sr-icons"></i>
+                </div>
+                <div class = "col-md-10">
+                  <h5 class="mb-4 superdark" style="font-weight:500">Ethical Hacking</h5>
+                  <p class="text-dark mb-0">Hack Your Way Through a Cybercrime Case.</p>
+                </div>
+              </div>
+            </div>
+            </div>
+             <div class="col-lg-4 col-md-12 ">
+              <div class="service-box mt-5 mx-auto">
+                <div class = "row">
+                <div class="col-md-2">
+                  <i class="fa fa-3x fa-android blue sr-icons"></i>
+                </div>
+                <div class = "col-md-10">
+                  <h5 class="mb-4 superdark" style="font-weight:500">Android App Development</h5>
+                  <p class="text-dark mb-0">Customize Your Life and Welcome Innovations.</p>
+                </div>
+              </div>
+            </div>
+            </div>
+             <div class="col-lg-4 col-md-12 ">
+              <div class="service-box mt-5 mx-auto">
+                <div class = "row">
+                <div class="col-md-2">
+                  <i class="fa fa-3x fa-television blue mb-3 sr-icons"></i>
+                </div>
+                <div class = "col-md-10">
+                  <h5 class="mb-4 superdark" style="font-weight:500">Digital Marketing</h5>
+                  <p class="text-dark mb-0">The Only Trend that Never Fades.</p>
+                </div>
+              </div>
+            </div>
+            </div>
+            </div>
+      
+         <div class="row ">
+            <div class="col-lg-4 col-md-12 ">
+              <div class="service-box mt-5 mx-auto">
+                <div class = "row">
+                <div class="col-md-2">
+                  <i class="fa fa-3x fa-diamond blue mb-3 sr-icons"></i>
+                </div>
+                <div class = "col-md-10">
+                  <h5 class="mb-4 superdark" style="font-weight:500">Bridge Design</h5>
+                  <p class="text-dark mb-0">Our cources are updated regularly so they don't break.</p>
+                </div>
+              </div>
+            </div>
+            </div>
+             <div class="col-lg-4 col-md-12 ">
+              <div class="service-box mt-5 mx-auto">
+                <div class = "row">
+                <div class="col-md-2">
+                  <i class="fa fa-3x fa-linux blue mb-3 sr-icons"></i>
+                </div>
+                <div class = "col-md-10">
+                  <h5 class="mb-4 superdark" style="font-weight:500">IoT</h5>
+                  <p class="text-dark mb-0">Remove Mundane Repetitive Tasks.</p>
+                </div>
+              </div>
+            </div>
+            </div>
+             <div class="col-lg-4 col-md-12 ">
+              <div class="service-box mt-5 mx-auto">
+                <div class = "row">
+                <div class="col-md-2">
+                  <i class="fa fa-3x fa-terminal  blue mb-3 sr-icons"></i>
+                </div>
+                <div class = "col-md-10">
+                  <h5 class="mb-4 superdark" style="font-weight:500">Machine Learning</h5>
+                  <p class="text-dark mb-0">Learn Without Being Explicitly Programmed.</p>
+                </div>
+              </div>
+            </div>
+            </div>
+            </div>
+            </div>
+        
+        
+      </div>
+      <br><br><br>
+      
+<div class = "container">
+  <div class = 'row'>
+    <div class = "col-md-4">
+      <figure class="snip1174 red ">
+        <img src="{% static 'img/workshops/Cyber Forensics.jpg' %}" alt="sq-sample33"/>
+        <figcaption>
+          <h5 class="mb-4 " style="font-weight:500">Ethical Hacking</h5>
+                  <p class="text-light mb-0">Hack Your Way Through a Cybercrime Case.</p>
+          <a href="#">Read More</a>
+        </figcaption>
+      </figure>
+    </div>
+    <div class = "col-md-4">
+      <figure class="snip1174 yellow hover ">
+        <img src="{% static 'img/workshops/android-app.jpg' %}" alt="sq-sample35"/>
+        <figcaption>
+          <h5 class="mb-4" style="font-weight:500">Android App Development</h5>
+                  <p class="text-light mb-0">Customize Your Life and Welcome Innovations.</p>
+          <a href="#">Join Today</a>
+        </figcaption>
+      </figure>
+    </div>
+    <div class = "col-md-4">
+      <figure class="snip1174 blue ">
+        <img src="{% static 'img/workshops/digitalmarketing.jpg' %}" alt="sq-sample34"/>
+        <figcaption>
+          <h5 class="mb-4 " style="font-weight:500">Digital Marketing</h5>
+                  <p class="text-light mb-0">The Only Trend that Never Fades.</p>
+          <a href="#">Get in Touch</a>
+        </figcaption>
+      </figure>
+    </div>
+    </div>
+    <div class = 'row'>
+    <div class = "col-md-4">
+      <figure class="snip1174 gray ">
+        <img src="{% static 'img/workshops/Bridge Design.jpg' %}" alt="sq-sample33"/>
+        <figcaption>
+          <h5 class="mb-4 " style="font-weight:500">Bridge Design</h5>
+                  <p class="text-light mb-0">Our cources are updated regularly so they don't break.</p>
+          <a href="#">Read More</a>
+        </figcaption>
+      </figure>
+    </div>
+    <div class = "col-md-4">
+      <figure class="snip1174 green hover ">
+        <img src="{% static 'img/workshops/IOT.jpg' %}" alt="sq-sample35"/>
+        <figcaption>
+                  <h5 class="mb-4 " style="font-weight:500">IoT</h5>
+                  <p class="text-light mb-0">Remove Mundane Repetitive Tasks.</p>
+          <a href="#">Join Today</a>
+        </figcaption>
+      </figure>
+    </div>
+    <div class = "col-md-4">
+      <figure class="snip1174 blue ">
+        <img src="{% static 'img/workshops/Machine learning.jpg' %}" alt="sq-sample34"/>
+        <figcaption>
+                           <h5 class="mb-4 " style="font-weight:500">IoT</h5>
+                  <p class="text-light mb-0">Remove Mundane Repetitive Tasks.</p>
+          <a href="#">Get in Touch</a>
+        </figcaption>
+      </figure>
+    </div>
+    </div>
+    </div>
+-->
+
+
+    <!--==========================
+      Workshop Section
+    ============================-->
+
+    <!--
+    <section id="workshops" class="" style="padding:100px 0;">
+      <div class="container">
+        <div class="section-header">
+          <h3 class="section-title">Workshops</h3>
+          <span class="section-divider"></span>
+          <p class="section-description">
+            Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque<br>
+            sunt in culpa qui officia deserunt mollit anim id est laborum
+          </p>
+        </div>
+      </div>  
+
+		<div class = " container workshop-list">
+        {% for workshop in workshops %}    
+          <div class="workshop-item  wow fadeInUp" style="margin-left: .5vw;margin-right: .5vw;">
+            <a href="{% url 'techno:workshops' id=workshop.id %}">
+              <img src=" {{ workshop.workshop_image.url }} "  class="img-fluid" alt="" style = "border-radius: 5px 5px 0 0;">
+                <div class="workshop-wrap">
+                  <div class="workshop-content">
+                    <p class="lead">Click Here to know more. </p>
+                  </div>
+                </div>
+                
+            </a>
+            <div style = "box-shadow: 0 8px 5px rgba(0, 0, 0, .1);">
+                <h6 class="workshop-name"> {{ workshop.workshop_title }} </h6>
+              <div class="workshop-detail"></div>
+            </div>
+          </div>                         
+        {% endfor %}
+    </div> -->
+    <!--Workshops ends-->
+  <!--  <div style = "height:45px"></div> 
+          <div class = "container">
+            <a href="{% url 'techno:workshop'  %}"><button type="button" class="btn btn-outline-dark btn-block">Know More</button></a>
+          </div>
+-->
+<!--
+    <section id="upcoming-events" class="section-bg">
+      <div class="container">
+
+        <div class="section-header">
+          <h3 class="section-title">Upcoming Events</h3>
+          <span class="section-divider"></span>
+          <p class="section-description">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
+        </div>
+
+        <div class="row">
+        {% for upcoming_event in upcoming_events %}
+          {% if upcoming_event.id|divisibleby:2 %}
+          <div class="col-lg-6">
+            <div class="box wow fadeInLeft">
+              <div class="icon"><i class="ion-ios-bookmarks-outline"></i></div>
+              <h4 class="title"><a href="{% url 'techno:upcoming' id=upcoming_event.id %}">{{ upcoming_event.event_title }}</a></h4>
+              <p class="description">{{ upcoming_event.event_detail|truncatechars:50}}</p>
+            </div>
+          </div>
+         
+        {% else %}
+          <div class="col-lg-6">
+            <div class="box wow fadeInRight">
+              <div class="icon"><i class="ion-ios-bookmarks-outline"></i></div>
+              <h4 class="title"><a href="{% url 'techno:upcoming' id=upcoming_event.id %}">{{ upcoming_event.event_title }}</a></h4>
+              <p class="description">{{ upcoming_event.event_detail|truncatechars:50}}</p>
+            </div>
+          </div>
+          {% endif %}
+        {% endfor %}
+
+        </div>
+      </div>
+    </section> 
+-->
+
+	    <!--==========================
+    	  Clients and testimonials Section
+    	============================-->
+
+    <!--==========================
+      Our Team Section         
+    ============================-->         
+
+	   <!--
+    <section id="team" class="section-bg">
+      <div class="container">
+        <div class="section-header">
+          <h3 class="section-title">Our Team</h3>
+          <span class="section-divider"></span>
+          <p class="section-description">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
+        </div>
+        <div class="row wow fadeInUp">
+          <div class = "col-md-2"></div>
+          <div class="col-lg-4 col-md-4">
+            <div class="member">
+              <div class="pic"><img src="{% static 'img/team/team-4.jpg' %}" alt=""></div>
+              <h4>Sudhir</h4>
+              <span>Designer And Developer</span>
+              <div class="social">
+                <a href=""><i class="fa fa-twitter"></i></a>
+                <a href=""><i class="fa fa-facebook"></i></a>
+                <a href=""><i class="fa fa-google-plus"></i></a>
+                <a href=""><i class="fa fa-linkedin"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-4">
+            <div class="member">
+              <div class="pic"><img src="{% static 'img/team/team-4.jpg' %}" alt=""></div>
+              <h4>Sudhir</h4>
+              <span>Designer And Developer</span>
+              <div class="social">
+                <a href=""><i class="fa fa-twitter"></i></a>
+                <a href=""><i class="fa fa-facebook"></i></a>
+                <a href=""><i class="fa fa-google-plus"></i></a>
+                <a href=""><i class="fa fa-linkedin"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class = "col-md-2"></div>
+        </div>
+
+      </div> 
+    </section> -->
+    <!-- #team -->
+
+    <!--==========================
+      Contact Section
+    ============================-->
+    

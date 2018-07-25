@@ -1,0 +1,109 @@
+{% extends "header3.html"%} 
+{% load tags %}
+{% load staticfiles %}
+{% block content %}
+        
+  <section class="banner full" style="padding: 0;min-height: 0vh;height: 60vh !important;">
+        <article>
+          <img src=" {% static 'img/contact_us.jpg' %}" alt="" style="height:50%!important" />
+          <div class="inner">
+            <header class = "wow fadeInUp">
+              <h3 style="font-size:61px !important;" > <strong>Contact Us</strong> </h3>
+              <p class="text-light">Interested in working together? Or you need some services?<br>
+              We, at <strong>Diginique</strong>, are more than happy to answer your queries and assist you in the best possible way.</p>
+              <a href="{% url 'techno:about'  %}">
+              </a>
+            </header>
+          </div>
+        </article> 
+      </section>
+
+  <div class = "container-fluid">
+      <div class = "row text-center">
+        <div class = "col-md-4"><i class="fa fa-home" style="font-size:48px;color:red"></i><br><br>118/170, Kaushalpuri Kanpur - 208012</div>
+        <div class = "col-md-4"><i class="fa fa-phone" style="font-size:48px;color:red"></i><br><br>+91-7985432632<br>+91-9758961520</div>
+        <div class = "col-md-4"><i class="fa fa-envelope-o" style="font-size:48px;color:red"></i><br><br>diginique2016@gmail.com<br>support@diginique.com</div>
+     </div>
+     <div class="container" id="contact" style="box-shadow: none!important;">
+          <div class = "row">
+          <div class ="col-md-2"></div>
+          <div class = "col-md-8">
+          <div class=" contact-about text-center">
+
+            <p><strong>Please fill in the form so that we may contact you</strong></p>
+            <div class="form">
+              <div id="sendmessage">Your message has been sent. Thank you!</div>
+              <div id="errormessage"></div>
+              <form action="" method="post" role="form" class="contactForm">
+                {% csrf_token %}
+                <div class="form-row">
+                  <div class="form-group col-lg-6">
+                    <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                    <div class="validation"></div>
+                  </div>
+                  <div class="form-group col-lg-6">
+                    <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
+                    <div class="validation"></div>
+                  </div>
+                </div>
+                 <div class="form-group">
+                  <input type="Number" class="form-control" name="contact_number" id="contact_number" placeholder="Contact Number" data-rule="minlen:4" data-msg="Please enter a correct phone number." />
+                  <div class="validation"></div>
+                </div>
+                <div class="form-group">
+                  <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
+                  <div class="validation"></div>
+                </div>
+              <input class="btn btn-outline-dark btn-block btn-block" type="submit" value="Submit" />  
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class ="col-md-2"></div>
+        </div>
+        <div class = "row wow fadeInUp">
+          <div class = "col-md-12">
+            <div class="contact-about text-center">
+              <div class="social-links"style="margin-top: 10%">
+                <a href="https://www.facebook.com/diginique2016/" class="facebook" ><i class="fa fa-facebook" ></i></a>
+                <a href="#" class="google-plus"><i class="fa fa-google-plus" ></i></a>
+              </div>
+            </div>
+          </div>
+          <div class = "col-md-0">
+            </div>
+          </div>
+        
+        
+      </div>   
+
+ <div class="container mb-5 wow fadeInUp"  id="map-style" style = "">
+    <div class = "row">
+      <div class = "col-md-7">
+      <div class = "" id ="map" style = "height:520px;width:100%; -webkit-box-shadow: 0px 27px 51.33px 7.67px rgba(0, 0, 0, 0.15);box-shadow: 0px 27px 51.33px 7.67px rgba(0, 0, 0, 0.15);border-radius:10px;"> </div>  
+      <script>
+        function initMap() {
+             // The location of Uluru26.4652475,80.312029
+             var location = {lat: 26.4652475, lng : 80.312029}
+             // The map, centered at location
+             var map = new google.maps.Map(
+                 document.getElementById('map'), {zoom: 13, center: location});
+             // The marker, positioned at location
+             var marker = new google.maps.Marker({position: location, map: map});
+            }
+      </script> 
+      <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCs3WL43sv7PJif3__dP7xrwqsKkJeQsZM&callback=initMap">
+      </script>
+      </div>
+      <div class = 'col-md-1'></div>
+      <div class = "col-md-4">
+
+        <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fdiginique2016%2F&tabs=timeline&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" width="340" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+      </div>
+      </div>
+    </div>
+    </div>
+  </div>
+
+ {% endblock %}

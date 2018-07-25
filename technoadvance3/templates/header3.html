@@ -1,0 +1,135 @@
+{% load staticfiles %}
+{% load tags %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Diginique</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="" name="keywords">
+  <meta content="" name="description">
+
+  <!-- Favicons -->
+  
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700|Open+Sans:300,300i,400,400i,700,700i" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Alegreya|Bitter|Cardo|Chivo|Cormorant+Garamond|Josefin+Sans|Nunito|Overpass|Proza+Libre|Raleway" rel="stylesheet">
+  <!-- Bootstrap CSS File -->
+  <link href="{% static 'lib/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'css/style3.css' %}" rel="stylesheet">
+
+  <!-- Libraries CSS Files -->
+  <link href="{% static 'lib/animate/animate.min.css' %}" rel="stylesheet">
+  <link href="{% static 'lib/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet">
+  <link href="{% static 'lib/ionicons/css/ionicons.min.css' %}" rel="stylesheet">
+  <!-- Main Stylesheet File -->
+  <link href="{% static 'css/style.css' %}" rel="stylesheet">
+  <link href="{% static 'css/style1.css' %}" rel="stylesheet">
+  
+  <link href="{% static 'lib/slick/slick-theme.css' %}" rel="stylesheet">
+  <link href="{% static 'lib/slick/slick.css' %}" rel="stylesheet">
+    
+</head>
+<body class = "main">
+
+  <!--==========================
+    Header
+  ============================-->
+
+    <header id="header" class = "header-fixed-dobara">
+    <div class="container-fluid">
+      
+      <div id="logo" class="pull-left" style="">
+        <!--<h1><a href="{%url 'techno:index' %}" class="scrollto">Diginque</a></h1> -->
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <a href="{%url 'techno:index' %}"><img src=" {% static 'img/Logos/diginique.jpg' %} " alt="" title="" style = "width:auto;height:55px;position: absolute;left:100px"></a>
+      </div>
+      <div class = "container">
+      <nav id="nav-menu-container">
+        <ul class="nav-menu float-right">
+             <li class="menu-active"><a href="{%url 'techno:index' %}">Home</a></li>
+             <li><a href=" {% url 'techno:about'  %}">About Us</a></li>
+             <li><a href=" {% url 'techno:workshop'  %}">Workshops</a></li>
+             <li><a href=" {% url 'techno:upcoming_events_temporary' %} ">Upcoming Events</a></li>
+             <li><a href=" {% url 'techno:become_a_campus_ambassador' %} ">Be a Campus Ambassador</a></li>
+             <li><a href=" {% url 'techno:request_a_workshop_view' %} ">Organize a Workshop</a></li>
+             <!-- <li><a href=" {% url 'techno:upcoming_events_temporary' %} ">Certificate Verification</a></li> -->
+             <li><a href=" {% url 'techno:contact_us' %}">Contact Us</a></li>
+             <!-- <li  class = "mobile-display" style="position:absolute; right:100px; top:5px; "><a href="{%url 'techno:index' %}"><img src=" {% static 'img/Logos/DIGIINFY.png' %} " alt="" title="" style = "height:55px;"></a></li> -->
+        </ul>
+      </nav><!-- #nav-menu-container -->
+        </div>
+    </div>
+  </header><!-- #header -->
+
+
+{% block content %}{% endblock %}
+
+
+  <!--==========================
+    Footer
+  ============================-->
+  <footer id="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 text-lg-left text-center">
+          <div class="copyright">
+            &copy;Copyright 2016 <strong> DiGi Infy. </strong> All Rights Reserved.
+          </div>
+          <!-- <div  class = "mobile-display" style="position:absolute; right:100px; top:5px; "><a href="{%url 'techno:index' %}"><img src=" {% static 'img/Logos/DIGIINFY.png' %} " alt="" title="" style = "height:55px;"></a></div>
+        -->
+          <div class="credits">
+           Designed by <a href="https://www.linkedin.com/in/ishan-rai-468231157/">Ishan</a> &amp; <a href="https://www.linkedin.com/in/durgesh-kumar-807233157/">Durgesh</a>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <nav class="footer-links text-lg-right text-center pt-2 pt-lg-0">
+            <a href="{%url 'techno:index' %}" class="scrollto">Home</a>
+            <a href="{% url 'techno:about'  %}" class="scrollto">About</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Use</a>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </footer><!-- #footer -->
+
+  <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+
+  <!-- JavaScript Libraries -->
+  <script src="{% static 'lib/jquery/jquery.min.js' %}"></script>
+  <script src="{% static 'lib/jquery/jquery-migrate.min.js' %}"></script>
+  <script src="{% static 'lib/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'lib/easing/easing.min.js' %}"></script>
+  <script src="{% static 'lib/wow/wow.min.js' %}"></script>
+  <script src="{% static 'lib/superfish/hoverIntent.js' %}"></script>
+  <script src="{% static 'lib/superfish/superfish.min.js' %}"></script>
+  <script src="{% static 'lib/magnific-popup/magnific-popup.min.js' %}"></script>
+  <script src="{% static 'lib/slick/slick.js' %}"></script>
+  <script src="{% static 'lib/slick/slick.min.js' %}"></script>
+  <script src="{% static 'lib/particle-js/particles.min.js' %}"></script>
+  <script src="{% static 'lib/particle-js/app.js' %}"></script>
+
+  <script src= "{% static 'js/jquery.scrollex.min.js' %}"  ></script>
+  <script src= "{% static 'js/skel.min.js' %}" ></script>
+  <script src= "{% static 'js/util.js' %}" ></script>
+  <script src= "{% static 'js/main.js' %}" ></script>
+
+  <!-- Contact Form JavaScript File -->
+  <script src="{% static 'contactform/contactform.js' %}"></script>
+
+  <!-- Template Main Javascript File -->
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-122862612-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-122862612-1');
+</script>
+
+
+</body>
+</html>

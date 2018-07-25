@@ -1,0 +1,309 @@
+{% extends "header3.html"%}
+{% load staticfiles %}
+
+{% load tags %}
+{% block content %}
+
+
+<style>
+.box {
+    border-radius: 4px;
+    margin-bottom: 2em;
+    background: #2c2c32;
+    text-align: center;
+    -webkit-box-shadow: 0px 0px 7.33px 12.67px rgba(0, 0, 0, 0.12);box-shadow: 0px 0px 7.33px 12.67px rgba(0, 0, 0, 0.12);border-radius:10px;}
+
+    .box > :last-child,
+    .box > :last-child > :last-child,
+    .box > :last-child > :last-child > :last-child {
+      margin-bottom: 0;
+    }
+
+    .box .image.fit {
+      margin: 0;
+    }
+
+    .box .image img {
+      border-radius: 4px 4px 0 0;
+    }
+
+    .box .inner {
+      padding: 1.5em;
+      width: 100% !important;
+    }
+
+      @media screen and (max-width: 480px) {
+
+        .box .inner {
+          padding: 1em;
+        }
+
+      }
+
+    .box.alt {
+      border: 0;
+      border-radius: 0;
+      padding: 0;
+    }
+
+/* Icon */
+
+  .icon {
+    text-decoration: none;
+    border-bottom: none;
+    position: relative;
+  }
+
+    .icon:before {
+      -moz-osx-font-smoothing: grayscale;
+      -webkit-font-smoothing: antialiased;
+      font-family: FontAwesome;
+      font-style: normal;
+      font-weight: normal;
+      text-transform: none !important;
+    }
+
+    .icon > .label {
+      display: none;
+    }
+
+/* Image */
+
+  .image {
+    border-radius: 4px;
+    border: 0;
+    display: inline-block;
+    position: relative;
+  }
+
+    .image img {
+      border-radius: 4px;
+      display: block;
+    }
+
+    .image.left, .image.right {
+      max-width: 40%;
+    }
+
+      .image.left img, .image.right img {
+        width: 100%;
+      }
+
+    .image.left {
+      float: left;
+      padding: 0 1.5em 1em 0;
+      top: 0.25em;
+    }
+
+    .image.right {
+      float: right;
+      padding: 0 0 1em 1.5em;
+      top: 0.25em;
+    }
+
+    .image.fit {
+      display: block;
+      margin: 0 0 2em 0;
+      width: 100%;
+    }
+
+      .image.fit img {
+        width: 100%;
+      }
+
+    .image.main {
+      display: block;
+      margin: 0 0 3em 0;
+      width: 100%;
+    }
+
+      .image.main img {
+        width: 100%;
+      }
+.button{
+
+    width: 100%;
+    display: block;
+    background: #70c7be;
+    padding: 10px;
+    border-radius: 5px;
+
+}
+.button1{
+  width: 100%;
+    display: block;
+    padding: 10px;
+    border-radius: 5px;
+
+  background: #7f92cf;
+}
+.button2{
+  width: 100%;
+    display: block;
+    padding: 10px;
+    border-radius: 5px;
+
+  background: #9d7ed0;
+}
+
+</style>
+<section class="banner full" style="padding: 0;min-height: 0vh;height: 60vh !important;">
+        <article>
+          <img src=" {% static 'img/workshop2.jpg' %}" alt="" style="height:50%!important" />
+          <div class="inner">
+            <header class = "wow fadeInUp">
+              <h3 style="font-size:61px !important;" > <strong>Workshops</strong> </h3>
+              <p>Few workshops that we offer. Certainly not exhaustive.</p>
+              <a href="{% url 'techno:about'  %}">
+              </a>
+            </header>
+          </div>
+        </article>
+        
+     
+      </section>
+   <div class = "container wow fadeInUp" style="padding-top: 20px;">
+   {% for workshop in workshops %}    
+     {% ifequal forloop.counter0|modulo:3 0 %}
+           <div class = "row">
+           {% endifequal %}
+                   <div class="category-section col-xs-12 col-sm-6 col-md-4">
+                      <div class="box">
+                        <a href= "{% url 'techno:workshops' id=workshop.id %}" class="image fit"><img src=" {{ workshop.workshop_image.url }} " alt="" /></a>
+                        <div class="inner">
+                          <h4 class="text-light"> {{ workshop.workshop_title }}  </h4>
+                          <p class="text-secondary"> {{ workshop.workshop_about|truncatewords:20 }} </p>
+                          
+                          {% if forloop.counter|divisibleby:2 %}
+                          <a href="{% url 'techno:workshops' id=workshop.id %}" class="button1 fit text-light" >Know More</a>
+                          {% else %}
+                          <a href="{% url 'techno:workshops' id=workshop.id %}" class="button2 fit text-light" >Know More</a>
+                          {% endif %}
+                        </div>
+                      </div>
+
+                   </div>                                                 
+                 {% ifequal forloop.counter0|modulo:3 2 %}
+           </div>
+             {% endifequal %}
+   {% endfor %}
+   </div>
+   </div>
+<style>
+  #clients img{
+    border:1px solid black !important;
+    height:120px;
+    width:150px;
+    -webkit-box-shadow: 0px 0px 29px 7px rgba(0,0,0,0.31);
+    -moz-box-shadow: 0px 0px 29px 7px rgba(0,0,0,0.31);
+    box-shadow: 0px 0px 29px 7px rgba(0,0,0,0.31);
+  }
+  .client-slider p{
+    font-size: 18px;
+    text-align: center;
+    line-height: 2.5;
+  }
+</style>
+<section id = "clients" style = "margin-top:45px" >
+    <div class="container">
+    <div class="section-header">
+          <h3 class="section-title">Who we've worked with</h3>
+          <p class="section-description"> We are highly thankful to our partners who believed in us and gave us a chance to engage ourselves in their events. Let’s introduce you to some of India’s best institutes. </p>
+          <span class="section-divider"></span>
+            
+        <div class = "client-slider" >                
+        <div style="margin-right: 2.5vw;margin-left: 2.5vw;"><img src = "{% static 'img/clients/apogee.jpg' %}" alt=""><p>BITS Pilani</p></div>
+        <div style="margin-right: 2.5vw;margin-left: 2.5vw;"><img src = "{% static 'img/clients/cogni.png' %}"  alt="" ><p>IIT Roorkee</p></div>
+        <div style="margin-right: 2.5vw;margin-left: 2.5vw;"><img src = "{% static 'img/clients/techkriti.png' %}" alt=""><p>IIT Kanpur</p></div>
+        <div style="margin-right: 2.5vw;margin-left: 2.5vw;"><img src = "{% static 'img/clients/technext.jpg' %}"  alt=""><p>IIT (BHU)</p></div>
+        <div style="margin-right: 2.5vw;margin-left: 2.5vw;"><img src = "{% static 'img/clients/techniche.jpg' %}"  alt=""><p>IIT Guwahati</p></div>
+        <div style="margin-right: 2.5vw;margin-left: 2.5vw;"><img src = "{% static 'img/clients/wissenaire.png' %}"  alt=""><p>IIT Bhubaneswar</p></div>
+        <div style="margin-right: 2.5vw;margin-left: 2.5vw;"><img src = "{% static 'img/clients/exodia.png' %}"  alt=""><p>IIT Mandi</p></div>
+        
+        </div>
+      </div>
+  </div>
+  <div style = "height:70px"></div> 
+</section>
+ 
+<section id="contact">
+      <div class="container">
+        <div class="section-header">
+          <h3 class="section-title">GET IN TOUCH</h3>
+          <span class="section-divider"></span>
+       </div>
+        <div class="row wow fadeInUp">
+
+          <div class="col-lg-4 col-md-6">
+            <div class="contact-about">
+             <h5><strong>Diginique Techno Solutions</strong></h5>
+              <h6>Unique Advancement to Your Career</h6>
+              <br>
+              <p class = "text-justify"> <strong>Diginique, </strong> A domain of <strong>DiGi Infy,</strong> is a fast growing organization founded by <strong>IIT Graduates</strong> and <strong>Google AdWords </strong> certified consultant, which aims to revolutionize the field of technology and management seamlessly.</p>
+              <div class="social-links">
+                <a href="https://www.facebook.com/diginique2016/" class="facebook"><i class="fa fa-facebook"></i></a>
+                <a href="https://plus.google.com/114057180279997984204" class="google-plus"><i class="fa fa-google-plus"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6">
+            <div class="info">
+              <div>
+                <i class="ion-ios-location-outline"></i>
+                <p><strong>Head Office:</strong><br>118/190, Kaushalpuri Kanpur - 201812</p>
+              </div>
+              <div>
+                <i class="ion-ios-email-outline"></i>
+                <p><strong>For support or queries write us at:</strong> <br>diginique2016@gmail.com<br>support@diginique.com</p>
+              </div>
+
+              <div>
+                <i class="ion-ios-telephone-outline"></i>
+                <p><strong>Give us a call at:</strong><br>
+
+               +91-7985432632 <br> +91-9758961520</p>
+              </div>
+
+            </div>
+          </div>
+          
+          <div class="col-lg-5 col-md-12 contact-about">
+            <p><strong>Please fill in the form so that we may contact you</strong></p>
+            <div class="form">
+              <div id="sendmessage">Your message has been sent. Thank you!</div>
+              <div id="errormessage"></div>
+              <form action="" method="post" role="form" class="contactForm">
+                {% csrf_token %}
+                <div class="form-row">
+                  <div class="form-group col-lg-6">
+                    <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                    <div class="validation"></div>
+                  </div>
+                  <div class="form-group col-lg-6">
+                    <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
+                    <div class="validation"></div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <input type="Number" class="form-control" name="contact_number" id="contact_number" placeholder="Contact Number" data-rule="minlen:4" data-msg="Please enter a correct phone number." />
+                  <div class="validation"></div>
+                </div>
+                <div class="form-group">
+                  <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
+                  <div class="validation"></div>
+                </div>
+              <input class="btn btn-outline-dark btn-block btn-block" type="submit" value="Submit" />  
+              </form>
+            </div>
+          </div>
+
+        </div>
+
+
+          
+
+      </div>
+    </section><!-- #contact -->
+
+{% endblock %}
